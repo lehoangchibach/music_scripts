@@ -25,7 +25,8 @@ def convert_flac_to_mp3(src_folder, dst_folder, bitrate="320k"):
 
                 cnt_convert += 1
                 print(f"SUCCESS{src_file} to {dst_file}")
-            except:
+            except BaseException as e:
+                print(f"ERROR: {e}")
                 print(f"FAILED: {src_file}")
                 errs.append(filename)
 
