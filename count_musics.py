@@ -12,6 +12,6 @@ def count_files_in_folder(folder_path):
 
 
 if __name__ == "__main__":
-    folder_path = "C:\\Users\\lehoa\\OneDrive\\Documents\\Musics\\files\\Rocks"  # Replace with the path to your folder
+    folder_path = "../files/Rocks"  # Replace with the path to your folder
     total_files = count_files_in_folder(folder_path)
     print(f"Total number of files in the folder '{folder_path}': {total_files}")
