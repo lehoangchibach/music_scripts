@@ -33,8 +33,6 @@ def move_files_from_subfolders(source_folder, target_folder):
 
 
 if __name__ == "__main__":
-    source_folder = (
-        "C:\\Users\\lehoa\\Downloads\\torrents\\soulseek\\complete"  # Replace with the path to your source folder
-    )
-    target_folder = "C:\\Users\\lehoa\\OneDrive\\Documents\\Musics\\files"  # Replace with the path to your target folder
+    source_folder = "/home/lehoangchibach/Downloads/torrents/nicotine"
+    target_folder = "/home/lehoangchibach/Music/files/tmp"
     move_files_from_subfolders(source_folder, target_folder)
