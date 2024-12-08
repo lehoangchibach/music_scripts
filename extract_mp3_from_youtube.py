@@ -41,9 +41,7 @@ def clean_up_temp_files(video_file):
 
 
 # Example usage:
-video_url = (
-    "https://youtu.be/lyPyKGopRLc?si=Q7pTwWylhx1nUzE"  # Replace with actual YouTube URL
-)
+video_url = input("URL: ")
 
 video_file = "outputs/downloaded_video.mp4"
 mp3_output_file = "outputs/output_audio.mp3"
