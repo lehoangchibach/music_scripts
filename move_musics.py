@@ -17,6 +17,9 @@ def move_files_from_subfolders(source_folder, target_folder):
             if os.path.exists(target_file_path):
                 base, extension = os.path.splitext(file)
                 i = 1
+                print(extension)
+                if extension not in {"flac", "mp3", "m4a", "wav"}:
+                    continue
                 new_target_file_path = os.path.join(
                     target_folder, f"{base}_{i}{extension}"
                 )

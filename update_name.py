@@ -51,6 +51,6 @@ def update_name(directory):
             print(f"Error renaming {file}: {e}")
 
 
-directory_path = "../files/tmp_normalized"
+directory_path = "../files/tmp"
 
 update_name(directory_path)
