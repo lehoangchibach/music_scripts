@@ -42,13 +42,14 @@ def update_name(directory):
         if song_title[:5] == "Error":
             continue
         new_name = os.path.join(directory, song_title)
+        new_name = new_name.replace("'", "_")
 
         try:
             if os.path.isfile(file):  # Check if it's a file before renaming
                 os.rename(file, new_name)
                 print(f"Successfully renamed {file} to {new_name}")
         except OSError as e:
-            print(f"Error renaming {file}: {e}")
+            print(f"Error renaming {file}: \n{e}")
 
 
 directory_path = "../files/tmp"

@@ -4,12 +4,10 @@ from functools import partial
 from multiprocessing import Pool
 
 import matplotlib.pyplot as plt
-import mutagen
 from mutagen.flac import FLAC, Picture
 from mutagen.id3 import APIC, ID3
 from mutagen.mp4 import MP4
 from pydub import AudioSegment
-from pydub.playback import play
 from pydub.utils import mediainfo
 
 input_folder = "../files/tmp/"
