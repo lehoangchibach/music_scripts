@@ -49,6 +49,7 @@ def handle_metadata(flac_path, mp3_path):
 
     # Save the MP3 file with metadata
     mp3_metadata.save()
+    shutil.copystat(flac_path, mp3_path)
 
 
 def convert_flac_to_mp3(files, src_folder, dst_folder, bitrate="320k"):
@@ -68,6 +69,7 @@ def convert_flac_to_mp3(files, src_folder, dst_folder, bitrate="320k"):
                 )
                 if os.path.isfile(dst_file):
                     print(f"EXIST: {filename}")
+                    shutil.copystat(src_file, dst_file)
                     continue
 
                 # Load the FLAC file
@@ -92,6 +94,7 @@ def convert_flac_to_mp3(files, src_folder, dst_folder, bitrate="320k"):
             dst_file = os.path.join(dst_folder, filename)
             if os.path.isfile(dst_file):
                 print(f"EXIST: {filename}")
+                shutil.copystat(src_file, dst_file)
                 continue
 
             shutil.copy2(src_file, dst_folder)
