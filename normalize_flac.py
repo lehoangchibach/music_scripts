@@ -44,6 +44,10 @@ def normalize_audio(file: str, target_dBFS):
         input_file = os.path.join(input_folder, file)
         output_file = os.path.join(output_folder, file)
 
+        if os.path.exists(output_file):
+            print(f"Existed: {file}")
+            return
+
         # Load the audio file
         audio = AudioSegment.from_file(input_file)
         if target_dBFS - 1 <= audio.dBFS and audio.dBFS <= target_dBFS + 1:
@@ -151,11 +155,11 @@ def get_loudness(input_folder):
     return loudness_list
 
 
-loudnesses = get_loudness(input_folder)
-volumes = [x[1] for x in loudnesses]
-print(len(volumes))
-plt.hist(volumes)
-plt.show()
+# loudnesses = get_loudness(input_folder)
+# volumes = [x[1] for x in loudnesses]
+# print(len(volumes))
+# plt.hist(volumes)
+# plt.show()
 
 normalize_folder(input_folder, output_folder, target_dBFS=-10.0)
 

@@ -120,8 +120,8 @@ def divide_list(lst, n):
 
 
 # Set your source and destination folders
-src_folder = "../files/Rocks_normalized//"
-dst_folder = "../files/Rocks_compressed/"
+src_folder = "../files/tmp_normalized/"
+dst_folder = "../files/tmp_compressed/"
 NUM_PROCESS = 12
 
 if __name__ == "__main__":
