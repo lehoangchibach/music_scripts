@@ -126,6 +126,7 @@ NUM_PROCESS = 12
 
 if __name__ == "__main__":
     files = os.listdir(src_folder)
+    NUM_PROCESS = min(NUM_PROCESS, len(files))
     divided_files = divide_list(files, NUM_PROCESS)
 
     with multiprocessing.Pool(processes=NUM_PROCESS) as pool:
