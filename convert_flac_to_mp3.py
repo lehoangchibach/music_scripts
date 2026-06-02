@@ -78,8 +78,8 @@ def convert_flac_to_mp3(files, src_folder, dst_folder, bitrate="320k"):
                 audio.export(
                     dst_file,
                     format="mp3",
-                    bitrate=bitrate,
-                    parameters=["-ac", "2", "-ar", "48000"],
+                    bitrate="210k",  # bitrate,
+                    parameters=["-q:a", "2", "-ac", "2", "-ar", "44100"],
                 )
                 handle_metadata(src_file, dst_file)
 
@@ -122,7 +122,7 @@ def divide_list(lst, n):
 # Set your source and destination folders
 src_folder = "../files/tmp_normalized/"
 dst_folder = "../files/tmp_compressed/"
-NUM_PROCESS = 12
+NUM_PROCESS = 15
 
 if __name__ == "__main__":
     files = os.listdir(src_folder)
